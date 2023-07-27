@@ -1,6 +1,22 @@
 const apiKey = "02722630c76da0352afa13dcb2808358";
 let cityNameInput = document.querySelector("#cityName");
 let searchBtn = document.querySelector(".searchBtn");
+//let cityBtn = cityNameInput.value
+let cityBtn = document.querySelector("button.cityBtn");
+//  cityNameInput;
+
+
+// localStorage.setItem
+
+// cityBtn.textContent = (function saveInput() {
+// 	var inputText = cityNameInput.value;
+// 	localStorage.setItem("saveInput", inputText);
+// })
+//     function loadInput() {
+// 	    var savedText = localStorage.getItem("saveInput");
+// 	    cityNameInput.value = savedText;
+// };
+
 
 function cityLocation() {
 	let cityName = cityNameInput.value;
@@ -25,7 +41,7 @@ function cityLocation() {
 					if (!response.ok) {
 						throw new Error("Could not retrieve weather forecast.");
 					}
-			//		return response.json();
+					return response.json();
 				})
 				.then(function (data) {
 					console.log(data);
