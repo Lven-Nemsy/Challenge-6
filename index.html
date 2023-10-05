@@ -11,14 +11,28 @@
 <body>
     <header>
         <h1 class="header">Weather Dashboard</h1>
-        <h2 class="city-title">Search for a city:</h2>
     </header>
 
-    <input placeholder="City name" id="cityName" type="text">
+    <main>
+        <div class="searchBox">
+            <div>
+                <h2 class="city-title">Search for a city:</h2>
+                <input placeholder="City name" id="cityName" type="text">
+                <button class="searchBtn" id="">Search</button>
+            </div>
+            <hr>
+            <div id="searchHistory"></div>
+        </div>
+        <div class="weatherData">
+            <div id="current"></div>
+            <div id="forecast"></div>
+        </div>
 
-    <button class="searchBtn" onclick="saveInput()">Search</button>
+    </main>
 
-    <button class="cityBtn" onclick="loadInput()"></button>
+
+
+
 
 
 

@@ -5,7 +5,6 @@ let searchBtn = document.querySelector(".searchBtn");
 let cityBtn = document.querySelector("button.cityBtn");
 //  cityNameInput;
 
-
 // localStorage.setItem
 
 // cityBtn.textContent = (function saveInput() {
@@ -17,38 +16,81 @@ let cityBtn = document.querySelector("button.cityBtn");
 // 	    cityNameInput.value = savedText;
 // };
 
-
 function cityLocation() {
 	let cityName = cityNameInput.value;
-	let requestUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit5&appid=${apiKey}`;
+	weather(cityName);
+	forecast(cityName);
+}
 
-	fetch(requestUrl)
+function forecast(city) {
+	let requestUrlTwo = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`;
+
+	fetch(requestUrlTwo)
 		.then(function (response) {
 			if (!response.ok) {
-				throw new Error("Could not retrieve city location.");
+				throw new Error("Could not retrieve weather forecast.");
 			}
 			return response.json();
 		})
 		.then(function (data) {
 			console.log(data);
-			let latitude = data[0].lat;
-			let longitude = data[0].lon;
+			var arrayItems = [
+				data.list[2],
+				data.list[10],
+				data.list[18],
+				data.list[26],
+				data.list[34],
+			];
 
-			let requestUrlTwo = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&exclude=minutely,hourly&units=imperial&appid=${apiKey}`;
+			var forecastWeatherContainer =	document.getElementById("forecast");
+			forecastWeatherContainer.innerHTML = "";
 
-			fetch(requestUrlTwo)
-				.then(function (response) {
-					if (!response.ok) {
-						throw new Error("Could not retrieve weather forecast.");
-					}
-					return response.json();
-				})
-				.then(function (data) {
-					console.log(data);
-				})
-				.catch(function (error) {
-					console.error(error);
-				});
+			for (let i = 0; i < arrayItems.length; i++) {
+
+				var cityName = document.createElement("h1");
+				var cityTime = document.createElement("h1");
+				var temp = document.createElement("p");
+				var wind = document.createElement("p");
+				var humid = document.createElement("p");
+
+				//cityName.textContent = data.name;
+				cityTime.textContent = "At " + arrayItems[i].dt_txt;
+				temp.textContent = "Temp: " + arrayItems[i].main.temp;
+				wind.textContent = "Wind: " + arrayItems[i].wind.speed;
+				humid.textContent = "Humidity:" + arrayItems[i].main.humidity;
+				forecastWeatherContainer.append(cityName, cityTime, temp, wind, humid);
+			}
+		})
+		.catch(function (error) {
+			console.error(error);
+		});
+}
+
+function weather(city) {
+	let requestUrlTwo = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
+
+	fetch(requestUrlTwo)
+		.then(function (response) {
+			if (!response.ok) {
+				throw new Error("Could not retrieve weather forecast.");
+			}
+			return response.json();
+		})
+		.then(function (data) {
+			var currentWeatherContainer = document.getElementById("current");
+
+			currentWeatherContainer.innerHTML = "";
+		
+			var cityName = document.createElement("h1");
+			var temp = document.createElement("p");
+			var wind = document.createElement("p");
+			var humid = document.createElement("p");
+
+			cityName.textContent = data.name;
+			temp.textContent = 'Temp: ' + data.main.temp;
+			wind.textContent = 'Wind: ' + data.wind.speed;
+			humid.textContent = 'Humidity:' + data.main.humidity;
+			currentWeatherContainer.append(cityName, temp, wind, humid);
 		})
 		.catch(function (error) {
 			console.error(error);
