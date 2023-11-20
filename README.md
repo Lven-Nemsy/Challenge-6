@@ -19,7 +19,7 @@ To use the Weather Forecast simply type in the city you wish to look up and clic
 
 ## Credits
 
-Troubleshooted with Kyle Jocoy. Used Phind.com for debugging.
+Troubleshooted with Kyle Jocoy. Used Phind.com and AskBCS for debugging.
 
 ## License
 
@@ -27,5 +27,5 @@ The last section of a high-quality README file is the license. This lets other d
 
 ---
 
-
+![Alt text](<assets/Screenshot 2023-11-19 230546.png>)
 
