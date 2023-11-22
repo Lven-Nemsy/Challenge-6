@@ -25,10 +25,25 @@ main {
 
 .city-title {
 	color: black;
-	font-size: 26px;
+	font-size: 24px;
 	font-family: Verdana, Tahoma, sans-serif;
 	font-weight: 200;
 	cursor: default;
+}
+
+.city-title2 {
+	color: black;
+	font-size: 22px;
+	font-family: Verdana, Tahoma, sans-serif;
+	font-weight: 200;
+	cursor: default;
+}
+
+#searchHistory {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
 }
 
 .searchBtn {
@@ -41,7 +56,7 @@ main {
 	cursor: pointer;
 
 	&:hover {
-		background-color: floralwhite;
+		background-color: rgb(74, 82, 95);
 		color: darkgray;
 	}
 }
@@ -52,8 +67,11 @@ main {
 	font-size: 18px;
 	font-family: Verdana, Tahoma, sans-serif;
 	border-radius: 8px;
+	box-sizing:content-box;
 	padding: 5px 20px 5px 20px;
 	cursor: pointer;
+
+
 }
 
 input {
@@ -83,6 +101,7 @@ input {
 	border-radius: 8px;
 	border-color: black;
 	cursor: pointer;
+
 	display: flex;
 
 	
@@ -108,12 +127,19 @@ input {
 	font-size: medium;
 }
 
+
 #forecast h3 {
 	margin-bottom: 4px;
 }
 
 #forecast p {
+
 	color: orangered;
+}
+	
+.release {
+	margin-bottom: 24px;
+
 }
 	
 .release {
