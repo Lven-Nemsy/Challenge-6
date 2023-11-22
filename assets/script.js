@@ -16,12 +16,16 @@ function storeLocalStorage(city) {
 	}
 }
 
+function handleSubmit(){
+	let city = cityNameInput.value.trim();
+	cityLocation(city);
+}
 
 
 function cityLocation(city) {
-	let cityName = cityNameInput.value;
-	weather(cityName);
-	forecast(cityName);
+	
+	weather(city);
+	forecast(city);
 
 }
 
@@ -126,38 +130,7 @@ function weather(city) {
 		});
 }
 
-function weather(city) {
-	let requestUrlTwo = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
-
-	fetch(requestUrlTwo)
-		.then(function (response) {
-			if (!response.ok) {
-				throw new Error("Could not retrieve weather forecast.");
-			}
-			return response.json();
-		})
-		.then(function (data) {
-			var currentWeatherContainer = document.getElementById("current");
-
-			currentWeatherContainer.innerHTML = "";
-
-			var cityName = document.createElement("h1");
-			var temp = document.createElement("p");
-			var wind = document.createElement("p");
-			var humid = document.createElement("p");
-
-			cityName.textContent = data.name;
-			temp.textContent = "Temp: " + data.main.temp;
-			wind.textContent = "Wind: " + data.wind.speed;
-			humid.textContent = "Humidity:" + data.main.humidity;
-
-			currentWeatherContainer.append(cityName, temp, wind, humid);
-		})
-		.catch(function (error) {
-			console.error(error);
-		});
-}
 
 
-searchBtn.addEventListener("click", cityLocation);
-cityBtn.addEventListener('click', cityLocation);
+
+searchBtn.addEventListener("click", handleSubmit);
