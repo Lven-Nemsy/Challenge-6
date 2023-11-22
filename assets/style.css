@@ -71,10 +71,7 @@ main {
 	padding: 5px 20px 5px 20px;
 	cursor: pointer;
 
-	&:hover {
-		background-color: cornflowerblue;
-		color: aliceblue;
-	}
+
 }
 
 input {
@@ -104,12 +101,19 @@ input {
 	border-radius: 8px;
 	border-color: black;
 	cursor: pointer;
+
+	display: flex;
+
 	
-	&:hover {
+	/* &:hover {
 		background-color: floralwhite;
 		color: darkgray;
-	}
-
+	} */
+}
+#forecast div {
+	margin: 6px;
+	padding: 10px;
+	border: black solid 3px;
 }
 
 #forecast img {
@@ -123,12 +127,19 @@ input {
 	font-size: medium;
 }
 
+
 #forecast h3 {
 	margin-bottom: 4px;
 }
 
 #forecast p {
-	color: rgb(49, 57, 65);
+
+	color: orangered;
+}
+	
+.release {
+	margin-bottom: 24px;
+
 }
 	
 .release {

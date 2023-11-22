@@ -14,7 +14,7 @@ N/A
 
 ## Usage
 
-To use the Weather Forecast simply type in the city you wish to look up and click 'Search'. It should show a breakdown of the current weather and a 5 day forecast. It should also keep a history of the last 5 cities that has been looked up. At the moment it doesn't do that and the weather appears in the console log.
+To use the Weather Forecast simply type in the city you wish to look up and click 'Search'. It should show a breakdown of the current weather and a 5 day forecast. It should also keep a history of the last 5 cities that has been looked up. At the moment it doesn't do that and the weather appears in the console log. I have yet to solve the issue of havi
 
 
 ## Credits
@@ -27,5 +27,8 @@ The last section of a high-quality README file is the license. This lets other d
 
 ---
 
+
+
 ![Alt text](<assets/Screenshot 2023-11-19 230546.png>)
+
 
