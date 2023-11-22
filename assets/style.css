@@ -83,12 +83,18 @@ input {
 	border-radius: 8px;
 	border-color: black;
 	cursor: pointer;
+	display: flex;
+
 	
-	&:hover {
+	/* &:hover {
 		background-color: floralwhite;
 		color: darkgray;
-	}
-
+	} */
+}
+#forecast div {
+	margin: 6px;
+	padding: 10px;
+	border: black solid 3px;
 }
 
 #forecast img {
