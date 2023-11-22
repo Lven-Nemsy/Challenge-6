@@ -3,21 +3,10 @@ const apiKey = "02722630c76da0352afa13dcb2808358";
 let cityNameInput = document.querySelector("#cityName");
 let searchBtn = document.querySelector(".searchBtn");
 
-//let cityBtn = cityNameInput.value
+
 let cityBtn = document.querySelector("button.cityBtn");
 let history = JSON.parse(localStorage.getItem("history")) || [];
-//  cityNameInput;
 
-// localStorage.setItem
-
-// cityBtn.textContent = (function saveInput() {
-// 	var inputText = cityNameInput.value;
-// 	localStorage.setItem("saveInput", inputText);
-// })
-//     function loadInput() {
-// 	    var savedText = localStorage.getItem("saveInput");
-// 	    cityNameInput.value = savedText;
-// };
 
 function storeLocalStorage(city) {
 	if (!history.includes(city)) {
@@ -27,15 +16,6 @@ function storeLocalStorage(city) {
 	}
 }
 
-
-// 		var cityBtn = document.createElement("button");
-// 		cityBtn.textContent = city;
-// 		cityBtn.addEventListener("click", function() {
-// 		  cityLocation(city);
-// 		});
-// 		cityList.appendChild(cityBtn);
-// 	}
-// }
 
 
 function cityLocation(city) {
